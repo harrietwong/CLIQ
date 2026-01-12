@@ -34,14 +34,18 @@ export const AppProvider = ({ children }: PropsWithChildren) => {
             : item
         );
       }
-      const colorName = product.colors.find(c => c.id === colorId)?.name || 'Standard';
+      
+      const selectedColor = product.colors.find(c => c.id === colorId);
+      const colorName = selectedColor?.name || 'Standard';
+      const itemImage = selectedColor?.gallery[0]?.url || '';
+      
       return [...prev, {
         productId: product.id,
         variantId: colorId,
         quantity,
         price: product.price,
         name: `${product.name} - ${colorName}`,
-        image: product.gallery[1].url // Use the first image
+        image: itemImage
       }];
     });
     setView('CART'); // Auto navigate to cart on add

@@ -11,25 +11,27 @@
           extend: {
             colors: {
               stone: {
-                50: '#FDFCF8',
+                50: '#FDFCF8', // Warm paper white
                 100: '#F5F4F0',
                 200: '#E8E6E1',
                 800: '#44403C',
                 900: '#292524',
               },
               cliq: {
-                accent: '#E35D46',
+                accent: '#E35D46', // Clay/Terracotta
               }
             },
             fontFamily: {
-              serif: ['Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
+              serif: ['"Playfair Display"', 'Georgia', 'Cambria', 'serif'],
               sans: ['Inter', 'system-ui', 'sans-serif'],
             }
           }
         }
       }
     </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
+      /* Hide scrollbar for clean horizontal scrolling */
       .no-scrollbar::-webkit-scrollbar {
         display: none;
       }
@@ -37,17 +39,39 @@
         -ms-overflow-style: none;
         scrollbar-width: none;
       }
+      html {
+        scroll-behavior: smooth;
+      }
       body {
         background-color: #FDFCF8;
         color: #292524;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      
+      /* Subtle page transition effect */
+      .page-transition-enter {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      .page-transition-enter-active {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity 800ms, transform 800ms;
       }
     </style>
-  </head>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+</head>
   <body>
     <div id="root"></div>
-    
-    <!-- 👇👇👇 关键：这里加入了你的 React 入口文件 👇👇👇 -->
-    <script type="module" src="/index.tsx"></script>
-    
   </body>
 </html>

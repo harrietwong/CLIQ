@@ -6,7 +6,7 @@ export interface Product {
   description: string;
   colors: ProductColor[];
   specs: Record<string, string>;
-  gallery: MediaItem[];
+  gallery: MediaItem[]; // Global gallery
   features: Feature[];
   reviews: Review[];
   faqs: FAQ[];
@@ -16,6 +16,7 @@ export interface ProductColor {
   id: string;
   name: string;
   hex: string;
+  gallery: MediaItem[]; // Images specific to this color variant
 }
 
 export interface MediaItem {

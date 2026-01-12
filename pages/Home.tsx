@@ -1,180 +1,219 @@
 import React from 'react';
 import { useApp } from '../store';
-import { ArrowRight, Play, Battery, Wifi, Music, Smartphone } from 'lucide-react';
-import { CLIQ_PHONE } from '../constants';
+import { EDITORIAL_VIDEOS } from '../constants';
+import { ChevronDown } from 'lucide-react';
 
 export const Home = () => {
   const { setView } = useApp();
 
   return (
-    <div className="w-full">
-      {/* --- HERO --- */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-stone-900">
-        {/* Background Video */}
-        <div className="absolute inset-0 z-0 opacity-60">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover"
-            poster="https://picsum.photos/id/201/1600/900"
-          >
-            <source src="https://cdn.pixabay.com/video/2020/05/25/40139-424930064_large.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          {/* Overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-b from-stone-900/40 via-transparent to-stone-900/60"></div>
+    <div className="bg-[#FDFCF8] text-stone-900 selection:bg-stone-200">
+      
+      {/* ① HERO SECTION — Emotional Opening */}
+      <section className="relative h-screen w-full flex flex-col justify-end lg:justify-center items-start px-6 lg:px-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://i.ibb.co/1xFjGbk/1.png" 
+            className="w-full h-full object-cover object-center scale-105 animate-[subtle-zoom_25s_infinite_alternate]"
+            alt="CLIQ Hero"
+          />
+          <div className="absolute inset-0 bg-stone-900/10 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-900/40 via-transparent to-transparent lg:bg-gradient-to-r lg:from-stone-50/50 lg:via-transparent"></div>
         </div>
 
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto text-white animate-in fade-in zoom-in duration-1000">
-          <div className="inline-block mb-4 px-3 py-1 border border-white/20 rounded-full text-xs font-medium tracking-widest uppercase bg-black/10 backdrop-blur-sm">
-            The New Standard for Calm
-          </div>
-          <h1 className="text-5xl md:text-7xl font-serif font-medium mb-6 tracking-tight leading-tight drop-shadow-lg">
-            Disconnect to <br/><span className="italic text-stone-200">Reconnect</span>
+        <div className="relative z-10 max-w-2xl mb-24 lg:mb-0 animate-in fade-in slide-in-from-bottom-12 duration-1000">
+          <h1 className="text-stone-900 font-serif text-7xl md:text-9xl mb-4 tracking-tighter leading-none">
+            CLIQ
           </h1>
-          <p className="text-xl md:text-2xl mb-10 text-stone-100 font-light max-w-2xl mx-auto drop-shadow-md">
-            A modern flip phone designed for intentional living. <br className="hidden md:block" />
-            Tactile keys, essential tools, no noise.
+          <p className="text-2xl md:text-3xl font-serif italic text-stone-800 mb-2 leading-tight">
+            Disconnect to reconnect.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <p className="text-lg md:text-xl font-light text-stone-600 mb-12">
+            A phone designed for a quieter life.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-8 items-start">
             <button 
               onClick={() => setView('PRODUCT')}
-              className="bg-white text-stone-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-stone-200 transition-colors w-full sm:w-auto shadow-xl"
+              className="bg-stone-900 text-stone-50 px-12 py-5 rounded-full font-medium text-lg hover:bg-stone-800 transition-all shadow-2xl active:scale-95"
             >
-              Buy CLIQ
+              Join the waitlist
             </button>
-            <button 
-              onClick={() => setView('PRODUCT')}
-              className="flex items-center gap-2 px-8 py-4 text-white border border-white/40 rounded-full hover:bg-white/10 transition-colors w-full sm:w-auto justify-center backdrop-blur-md"
-            >
-              <Play size={20} fill="currentColor" /> Watch the Film
-            </button>
+            <div className="flex flex-col justify-center py-2">
+              <p className="text-[10px] uppercase tracking-[0.4em] text-stone-400 font-bold">
+                Less noise. More presence.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="absolute bottom-10 left-0 right-0 text-center text-white/60 text-sm animate-bounce">
-          Scroll to explore
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-stone-300 lg:block hidden">
+          <ChevronDown size={32} strokeWidth={1} />
         </div>
       </section>
 
-      {/* --- FEATURE HIGHLIGHTS --- */}
-      <section className="py-24 bg-[#FDFCF8]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-serif text-stone-900 mb-4">Smart enough for essentials.<br/>Dumb enough for peace.</h2>
-            <div className="w-16 h-1 bg-orange-500 mx-auto mt-6"></div>
+      {/* ② LIFESTYLE / MODERN CALM */}
+      <section className="py-40 lg:py-72 px-6 lg:px-24 bg-[#FDFCF8]">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-12 lg:gap-24 items-center">
+          {/* Image Left */}
+          <div className="lg:col-span-1 relative aspect-[3/4] overflow-hidden rounded-[2.5rem] shadow-sm">
+            <img 
+              src="https://i.ibb.co/7tNsBnWm/2.png" 
+              className="w-full h-full object-cover"
+              alt="City Calm"
+            />
+          </div>
+          
+          {/* Video Beside Image - Vertical 9:16 Editorial Block */}
+          <div className="lg:col-span-1 relative aspect-[9/16] overflow-hidden rounded-[2.5rem] shadow-2xl border border-stone-100">
+            <video autoPlay muted loop playsInline className="w-full h-full object-cover">
+              <source src={EDITORIAL_VIDEOS.videoA} type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-stone-900/5 pointer-events-none"></div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="text-center group cursor-default">
-               <div className="w-full aspect-[4/5] bg-stone-100 rounded-2xl overflow-hidden mb-6 relative">
-                 <img src="https://picsum.photos/id/8/600/800" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Tactile" />
-                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors"></div>
-               </div>
-               <h3 className="text-xl font-bold mb-2">Tactile Feedback</h3>
-               <p className="text-stone-600 px-4">Real keys. Real clicks. The satisfying snap of finishing a call. Muscle memory returns.</p>
-            </div>
-            <div className="text-center group md:mt-16 cursor-default">
-               <div className="w-full aspect-[4/5] bg-stone-100 rounded-2xl overflow-hidden mb-6 relative">
-                 <img src="https://picsum.photos/id/1/600/800" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Focus" />
-                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors"></div>
-               </div>
-               <h3 className="text-xl font-bold mb-2">Pure Focus</h3>
-               <p className="text-stone-600 px-4">No news feed. No infinite scroll. No algorithmic distractions. Just you and the moment.</p>
-            </div>
-            <div className="text-center group cursor-default">
-               <div className="w-full aspect-[4/5] bg-stone-100 rounded-2xl overflow-hidden mb-6 relative">
-                 <img src="https://picsum.photos/id/10/600/800" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Compact" />
-                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors"></div>
-               </div>
-               <h3 className="text-xl font-bold mb-2">Pocketable</h3>
-               <p className="text-stone-600 px-4">Fits in the smallest pocket. Disappears when you need it to, always there when you don't.</p>
-            </div>
+          <div className="lg:col-span-1 space-y-12 lg:pl-12">
+            <h2 className="text-4xl md:text-5xl font-serif leading-[1.1] text-stone-900">
+              Modern life doesn’t <br />
+              need more notifications. <br />
+              <span className="italic text-stone-400">It needs space.</span>
+            </h2>
+            <p className="text-xl font-light text-stone-500 max-w-sm leading-relaxed">
+              CLIQ keeps what matters — calls, messages, intention — and removes what doesn’t.
+            </p>
+            <div className="pt-10 border-t border-stone-200 w-24"></div>
           </div>
         </div>
       </section>
 
-      {/* --- QUOTE BLOCK --- */}
-      <section className="bg-stone-900 text-stone-200 py-32 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <span className="text-6xl font-serif text-stone-700 absolute -top-10 -left-10">“</span>
-          <h2 className="text-3xl md:text-5xl font-serif leading-tight mb-8">
-            This phone changed my relationship with the internet. I finally have my weekends back.
+      {/* ③ STILL LIFE / OBJECT BEAUTY */}
+      <section className="relative h-[80vh] w-full flex items-end justify-center py-24 px-6 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="https://i.imgur.com/AKDbdP2.jpg" 
+            className="w-full h-full object-cover"
+            alt="Designed like an object"
+          />
+          <div className="absolute inset-0 bg-stone-900/10"></div>
+          <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-stone-900/80 to-transparent"></div>
+        </div>
+        
+        <div className="relative z-10 text-center text-stone-50 max-w-4xl">
+          <h2 className="text-4xl md:text-6xl font-serif mb-8 italic leading-tight">
+            Designed like an object, <br />not a distraction.
           </h2>
-          <div className="flex items-center justify-center gap-4">
-             <img src="https://i.pravatar.cc/100?img=32" className="w-12 h-12 rounded-full border-2 border-stone-700" alt="User" />
-             <div className="text-left">
-                <p className="font-bold text-white">Emily K.</p>
-                <p className="text-sm text-stone-500">Verified Buyer</p>
-             </div>
+          <p className="text-stone-300 tracking-[0.4em] text-[11px] uppercase font-bold">
+            Tactile buttons. Quiet screen. Timeless form.
+          </p>
+        </div>
+      </section>
+
+      {/* ④ QUIET MOMENTS / NIGHT */}
+      <section className="py-40 lg:py-72 px-6 lg:px-24 bg-stone-50">
+        <div className="max-w-5xl mx-auto flex flex-col items-center gap-24">
+          <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
+            <div className="space-y-12">
+              <h2 className="text-4xl md:text-7xl font-serif leading-[1.1] text-stone-900">
+                Leave your <br />
+                smartphone <br />
+                outside the <br />
+                bedroom.
+              </h2>
+              <p className="text-xl md:text-2xl font-light text-stone-600 leading-relaxed max-w-md">
+                CLIQ is made for rest, not scrolling. No feeds. No pressure. No endless night.
+              </p>
+            </div>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-sm">
+              <img 
+                src="https://i.imgur.com/5OO6OL8.jpg" 
+                className="w-full h-full object-cover"
+                alt="Night Routine"
+              />
+            </div>
+          </div>
+          
+          {/* Video D Below Image - Vertical Video Section */}
+          <div className="relative w-full max-w-md aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl">
+            <video autoPlay muted loop playsInline className="w-full h-full object-cover">
+              <source src={EDITORIAL_VIDEOS.videoD} type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-stone-900/10 pointer-events-none"></div>
+            <div className="absolute bottom-10 inset-x-0 text-center">
+              <p className="text-white text-[10px] uppercase tracking-widest font-bold opacity-60">Intentional Reflection</p>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* --- FEATURE LIST --- */}
-      <section className="py-24 max-w-7xl mx-auto px-4">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div className="order-2 md:order-1">
-             <h2 className="text-4xl font-serif mb-6">Modern tools included.</h2>
-             <p className="text-lg text-stone-600 mb-8">We didn't remove everything. Just the distractions.</p>
-             
-             <ul className="space-y-6">
-                <li className="flex items-start gap-4 group">
-                  <div className="p-3 bg-stone-100 rounded-lg group-hover:bg-stone-200 transition-colors"><Wifi size={24} className="text-stone-800" /></div>
-                  <div>
-                    <h4 className="font-bold text-lg">4G LTE & Hotspot</h4>
-                    <p className="text-stone-500">Fast connection when you need it. Tether to your laptop to work from anywhere.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4 group">
-                  <div className="p-3 bg-stone-100 rounded-lg group-hover:bg-stone-200 transition-colors"><Music size={24} className="text-stone-800" /></div>
-                  <div>
-                    <h4 className="font-bold text-lg">Music & Podcasts</h4>
-                    <p className="text-stone-500">Bluetooth 5.0 for your headphones. 64GB storage for offline listening.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4 group">
-                  <div className="p-3 bg-stone-100 rounded-lg group-hover:bg-stone-200 transition-colors"><Battery size={24} className="text-stone-800" /></div>
-                  <div>
-                    <h4 className="font-bold text-lg">4-Day Battery</h4>
-                    <p className="text-stone-500">Leave the charger at home for the long weekend. Standby time up to 10 days.</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4 group">
-                  <div className="p-3 bg-stone-100 rounded-lg group-hover:bg-stone-200 transition-colors"><Smartphone size={24} className="text-stone-800" /></div>
-                  <div>
-                    <h4 className="font-bold text-lg">Essential Apps</h4>
-                    <p className="text-stone-500">Maps, Calendar, Notes, Calculator, and Alarm. Everything you need, nothing you don't.</p>
-                  </div>
-                </li>
-             </ul>
-             
-             <button onClick={() => setView('PRODUCT')} className="mt-10 flex items-center gap-2 font-bold underline underline-offset-4 decoration-2 decoration-orange-500 hover:text-orange-600 transition-colors">
-               View Full Specs <ArrowRight size={16} />
-             </button>
+      {/* ⑤ HUMAN CONNECTION / MORNING RITUAL */}
+      <section className="py-40 lg:py-72 px-6 lg:px-24 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-32 space-y-8">
+            <h2 className="text-5xl md:text-8xl font-serif italic tracking-tight text-stone-900">
+              Technology should <br />feel human again.
+            </h2>
+            <p className="text-xl md:text-2xl font-light text-stone-400 max-w-2xl mx-auto leading-relaxed">
+              CLIQ supports presence — in conversations, mornings, and moments that matter.
+            </p>
           </div>
-          <div className="order-1 md:order-2 bg-stone-100 rounded-3xl p-8 aspect-square flex items-center justify-center relative overflow-hidden group">
-             <div className="absolute inset-0 bg-stone-200/50 rounded-3xl transform rotate-6 scale-90 transition-transform group-hover:rotate-3"></div>
-             <img src="https://picsum.photos/id/160/800/800" className="rounded-xl shadow-2xl relative z-10 max-w-[85%] transition-transform duration-700 group-hover:scale-105" alt="Phone Features" />
+
+          <div className="grid lg:grid-cols-3 gap-12 lg:gap-24 mb-48 items-center">
+            {/* Image 5 */}
+            <div className="space-y-10">
+              <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-sm">
+                <img 
+                  src="https://i.imgur.com/2M6dsQP.jpg" 
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000" 
+                  alt="Human Connection" 
+                />
+              </div>
+              <p className="text-xs uppercase tracking-[0.4em] text-stone-400 font-bold px-4">I. Connection</p>
+            </div>
+            
+            {/* Video C Between Images - Real Life Usage */}
+            <div className="space-y-10 lg:pt-32">
+              <div className="aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl">
+                <video autoPlay muted loop playsInline className="w-full h-full object-cover">
+                  <source src={EDITORIAL_VIDEOS.videoC} type="video/mp4" />
+                </video>
+              </div>
+              <p className="text-xs uppercase tracking-[0.4em] text-stone-400 font-bold px-4 text-center">Real-life moment</p>
+            </div>
+
+            {/* Image 6 */}
+            <div className="space-y-10">
+              <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-sm">
+                <img 
+                  src="https://i.imgur.com/pkRpvsf.jpg" 
+                  className="w-full h-full object-cover" 
+                  alt="Morning Ritual" 
+                />
+              </div>
+              <p className="text-xs uppercase tracking-[0.4em] text-stone-400 font-bold px-4 text-right">II. Ritual</p>
+            </div>
+          </div>
+
+          <div className="text-center max-w-3xl mx-auto space-y-16">
+            <h2 className="text-5xl md:text-9xl font-serif tracking-tighter text-stone-900 leading-none">Experience CLIQ</h2>
+            <p className="text-stone-400 font-light italic text-2xl">
+              Shipping worldwide.
+            </p>
+            <button 
+              onClick={() => setView('PRODUCT')}
+              className="bg-stone-900 text-stone-50 px-20 py-7 rounded-full font-medium text-xl hover:bg-stone-800 transition-all shadow-xl active:scale-95"
+            >
+              Order Now
+            </button>
           </div>
         </div>
       </section>
 
-      {/* --- PRE-FOOTER CTA --- */}
-      <section className="py-32 text-center bg-stone-50 border-t border-stone-200">
-        <h2 className="text-4xl md:text-6xl font-serif mb-6">Ready to feel the click?</h2>
-        <div className="flex justify-center gap-4">
-          <button 
-            onClick={() => setView('PRODUCT')}
-            className="bg-stone-900 text-white px-10 py-5 rounded-full font-bold text-xl hover:bg-stone-800 transition-transform hover:-translate-y-1 shadow-xl"
-          >
-            Buy CLIQ - ${CLIQ_PHONE.price}
-          </button>
-        </div>
-        <p className="mt-6 text-stone-500 text-sm">Free shipping worldwide. 30-day returns.</p>
-      </section>
+      <style>{`
+        @keyframes subtle-zoom {
+          from { transform: scale(1); }
+          to { transform: scale(1.15); }
+        }
+      `}</style>
     </div>
   );
 };

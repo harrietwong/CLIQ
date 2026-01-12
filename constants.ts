@@ -1,22 +1,45 @@
-import { Product, FAQ, Review } from './types';
+import { Product } from './types';
 
 export const CLIQ_PHONE: Product = {
   id: 'cliq-01',
-  name: 'CLIQ Flip Phone',
-  tagline: 'A modern flip phone with a tactile keypad, designed for calm daily use.',
-  price: 299,
+  name: 'CLIQ Retro Flip Phone',
+  tagline: 'A phone that does less. So you can live more.',
+  price: 99,
   description: 'Disconnect to reconnect. The CLIQ phone brings back the satisfying snap of a flip phone with modern essentials like Maps and Music, minus the distractions.',
   colors: [
-    { id: 'cloud-white', name: 'Cloud White', hex: '#F5F5F5' },
-    { id: 'midnight-grey', name: 'Midnight Grey', hex: '#333333' },
-    { id: 'matcha-green', name: 'Matcha Green', hex: '#8BA888' },
+    { 
+      id: 'black', 
+      name: 'Onyx Black', 
+      hex: '#1A1A1A',
+      gallery: [
+        { type: 'image', url: 'https://i.ibb.co/5XvBXcF5/1.png', alt: 'CLIQ Black Main' },
+        { type: 'image', url: 'https://i.ibb.co/5xLs8CFd/2.png', alt: 'CLIQ Black on table' },
+        { type: 'image', url: 'https://i.ibb.co/TBMnt1H8/4.png', alt: 'CLIQ Black in hand' },
+        { type: 'image', url: 'https://i.ibb.co/0y4v4wBQ/3.png', alt: 'CLIQ Black detail' },
+      ]
+    },
+    { 
+      id: 'red', 
+      name: 'Deep Red', 
+      hex: '#8B0000',
+      gallery: [
+        { type: 'image', url: 'https://i.ibb.co/SwQCgK0N/1.png', alt: 'CLIQ Red Main' },
+        { type: 'image', url: 'https://i.ibb.co/b5hytdy3/image.png', alt: 'CLIQ Red opened' },
+        { type: 'image', url: 'https://i.ibb.co/xShJxCW8/2.png', alt: 'CLIQ Red on table' },
+        { type: 'image', url: 'https://i.ibb.co/G3nnBYyC/3.png', alt: 'CLIQ Red detail' },
+      ]
+    },
+    { 
+      id: 'gold', 
+      name: 'Champagne Gold', 
+      hex: '#E3CBA8',
+      gallery: [
+        { type: 'image', url: 'https://i.ibb.co/QvdHQMsq/1.png', alt: 'CLIQ Gold Main' },
+        { type: 'image', url: 'https://i.ibb.co/S47nZwjD/2.png', alt: 'CLIQ Gold on table' },
+      ]
+    },
   ],
-  gallery: [
-    { type: 'video', url: 'https://cdn.pixabay.com/video/2024/05/03/210356_large.mp4', poster: 'https://picsum.photos/id/2/800/1000', alt: 'CLIQ Lifestyle Video' }, // Placeholder video
-    { type: 'image', url: 'https://picsum.photos/id/201/800/800', alt: 'CLIQ Front View' },
-    { type: 'image', url: 'https://picsum.photos/id/3/800/800', alt: 'CLIQ Keypad Detail' },
-    { type: 'image', url: 'https://picsum.photos/id/4/800/800', alt: 'CLIQ In Hand' },
-  ],
+  gallery: [],
   specs: {
     'Display': '2.8" E-Ink Main + 1.2" OLED Cover',
     'Keypad': 'Tactile backlit mechanical keys',
@@ -35,20 +58,16 @@ export const CLIQ_PHONE: Product = {
   reviews: [
     { id: 'r1', author: 'Sarah Jenkins', rating: 5, text: "I didn’t expect a flip phone to feel this satisfying. It helps me disconnect after work.", date: '2 days ago' },
     { id: 'r2', author: 'Marcus Chen', rating: 5, text: "Perfect as a second phone when I want less screen time. The aesthetics are top tier.", date: '1 week ago' },
-    { id: 'r3', author: 'Elena R.', rating: 5, text: "The keypad alone sold me. Writing texts feels deliberate and nice again.", date: '3 weeks ago' },
   ],
   faqs: [
     { question: "What’s included in the box?", answer: "1 × CLIQ Phone, 1 × Charging Cable, 1 × SIM Eject Tool, 1 × Quick Start Guide." },
     { question: "Will CLIQ work for me?", answer: "Yes! CLIQ is unlocked and works with most GSM carriers worldwide. You can also connect via Wi-Fi for apps and daily use." },
-    { question: "Is the keypad fully functional?", answer: "Absolutely. The physical keypad is fully functional and provides a satisfying tactile click. You can type using the keypad or switch to voice-to-text when needed." },
-    { question: "What can I do on CLIQ?", answer: "CLIQ is designed for calls, texts, music, navigation, and essential apps — without the overwhelm of a traditional smartphone." },
-    { question: "Shipping & delivery", answer: "Orders are processed within 1–2 business days. Delivery time varies by destination, typically between 4–8 business days." },
-    { question: "Returns & warranty", answer: "We offer a 30-day return policy and a 1-year limited warranty for peace of mind." },
   ]
 };
 
-export const ACCESSORIES = [
-  { id: 'acc-1', name: 'Vegan Leather Case', price: 35, image: 'https://picsum.photos/id/24/400/400' },
-  { id: 'acc-2', name: 'Braided USB-C Cable', price: 19, image: 'https://picsum.photos/id/25/400/400' },
-  { id: 'acc-3', name: 'Minimalist Lanyard', price: 15, image: 'https://picsum.photos/id/26/400/400' },
-];
+export const EDITORIAL_VIDEOS = {
+  videoA: "https://raw.githubusercontent.com/harrietwong/cliq-assets/main/%E6%BD%AE%E4%BA%BA.mp4",
+  videoB: "https://raw.githubusercontent.com/harrietwong/cliq-assets/main/%E9%BB%91%E4%BA%BA%20in%20a%20word.mp4",
+  videoC: "https://raw.githubusercontent.com/harrietwong/cliq-assets/main/%E7%94%B7%E7%94%9F%E6%94%BE%E5%8C%85%E5%8C%85%E9%87%8C.mp4",
+  videoD: "https://raw.githubusercontent.com/harrietwong/cliq-assets/main/%E7%94%B7%E7%94%9Fok.mp4"
+};
