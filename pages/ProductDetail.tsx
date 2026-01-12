@@ -81,8 +81,68 @@ export const ProductDetail = () => {
               </div>
             </div>
 
+            {/* FAQ + Phone Details Section */}
+            <div className="pt-12 space-y-12 border-t border-stone-100">
+              {/* FAQ Section */}
+              <div className="space-y-10">
+                <div className="space-y-3">
+                  <h4 className="text-base font-serif italic text-stone-900 leading-tight">What can CLIQ do?</h4>
+                  <p className="text-sm font-light text-stone-500 leading-relaxed">
+                    CLIQ is made for calls and messages — and for putting the phone down again. 
+                    Nothing extra. Nothing pulling you in.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <h4 className="text-base font-serif italic text-stone-900 leading-tight">Can I download apps?</h4>
+                  <p className="text-sm font-light text-stone-500 leading-relaxed">
+                    CLIQ runs on Android 8.1 with access to the Google Play Store. 
+                    You can download popular apps like Maps, Spotify, WhatsApp, TikTok, Instagram, and more.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <h4 className="text-base font-serif italic text-stone-900 leading-tight">Is CLIQ unlocked?</h4>
+                  <p className="text-sm font-light text-stone-500 leading-relaxed">
+                    Yes. CLIQ supports standard SIM cards. 
+                    Network compatibility may vary by region.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <h4 className="text-base font-serif italic text-stone-900 leading-tight">When will my order ship?</h4>
+                  <p className="text-sm font-light text-stone-500 leading-relaxed">
+                    Orders are processed within 1–3 business days. 
+                    Worldwide delivery typically takes 7–14 business days. 
+                    Every device is quality-checked and carefully packed before shipping.
+                  </p>
+                </div>
+
+                <div className="space-y-3">
+                  <h4 className="text-base font-serif italic text-stone-900 leading-tight">What if there’s a problem with my phone?</h4>
+                  <p className="text-sm font-light text-stone-500 leading-relaxed">
+                    If there’s a quality issue within 30 days of delivery, 
+                    we offer returns or exchanges with no complicated process.
+                  </p>
+                </div>
+              </div>
+
+              {/* Phone Details Section */}
+              <div className="space-y-5 pt-4">
+                <h4 className="text-[10px] uppercase tracking-[0.3em] font-bold text-stone-400">Phone Details</h4>
+                <ul className="space-y-2 text-[11px] font-light text-stone-400 leading-relaxed">
+                  <li>• SIM Card: Single SIM (3G supported)</li>
+                  <li>• System: Android 8.1</li>
+                  <li>• Connectivity: GPS, WiFi, Bluetooth 4.0, FM Radio, Compass, Gyro Sensor</li>
+                  <li>• Storage: External SD card supported</li>
+                  <li>• Camera: 8MP rear camera, 5MP front camera</li>
+                  <li>• Memory: 2GB RAM / 16GB storage</li>
+                </ul>
+              </div>
+            </div>
+
             {/* Buy Now Button */}
-            <div className="pt-8">
+            <div className="pt-4">
                <button 
                 onClick={handleBuyNow}
                 className="w-full bg-stone-900 text-stone-50 py-6 rounded-2xl font-medium text-xl hover:bg-stone-800 transition-all shadow-xl active:scale-[0.98] tracking-tight"
