@@ -17,30 +17,31 @@ export const Home = () => {
             className="w-full h-full object-cover object-center scale-105 animate-[subtle-zoom_25s_infinite_alternate]"
             alt="CLIQ Hero"
           />
-          <div className="absolute inset-0 bg-stone-900/10 mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-900/40 via-transparent to-transparent lg:bg-gradient-to-r lg:from-stone-50/50 lg:via-transparent"></div>
+          <div className="absolute inset-0 bg-stone-900/20 mix-blend-multiply"></div>
+          {/* Adjusted gradient to be darker (from-stone-900/50) instead of light to ensure text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-transparent to-transparent lg:bg-gradient-to-r lg:from-stone-900/50 lg:via-transparent"></div>
         </div>
 
         <div className="relative z-10 max-w-2xl mb-24 lg:mb-0 animate-in fade-in slide-in-from-bottom-12 duration-1000">
-          <h1 className="text-stone-900 font-serif text-7xl md:text-9xl mb-4 tracking-tighter leading-none">
+          <h1 className="text-stone-50 font-serif text-7xl md:text-9xl mb-4 tracking-tighter leading-none">
             CLIQ
           </h1>
-          <p className="text-2xl md:text-3xl font-serif italic text-stone-800 mb-2 leading-tight">
+          <p className="text-2xl md:text-3xl font-serif italic text-stone-200 mb-2 leading-tight">
             Disconnect to reconnect.
           </p>
-          <p className="text-lg md:text-xl font-light text-stone-600 mb-12">
+          <p className="text-lg md:text-xl font-light text-stone-300 mb-12">
             A phone designed for a quieter life.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-8 items-start">
             <button 
               onClick={() => setView('PRODUCT')}
-              className="bg-stone-900 text-stone-50 px-12 py-5 rounded-full font-medium text-lg hover:bg-stone-800 transition-all shadow-2xl active:scale-95"
+              className="bg-stone-50 text-stone-900 px-12 py-5 rounded-full font-medium text-lg hover:bg-white transition-all shadow-2xl active:scale-95"
             >
-              Join the waitlist
+              Buy CLIQ
             </button>
             <div className="flex flex-col justify-center py-2">
-              <p className="text-[10px] uppercase tracking-[0.4em] text-stone-400 font-bold">
+              <p className="text-[10px] uppercase tracking-[0.4em] text-stone-200 font-bold">
                 Less noise. More presence.
               </p>
             </div>
